@@ -10,13 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212205457) do
+ActiveRecord::Schema.define(version: 20171213003153) do
 
   create_table "grades", force: :cascade do |t|
     t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["year"], name: "index_grades_on_year", unique: true
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "email"
+    t.string "last_name"
+    t.string "first_name"
+    t.string "document_number"
+    t.integer "docket_number"
+    t.integer "grade_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["docket_number", "grade_id"], name: "index_students_on_docket_number_and_grade_id", unique: true
+    t.index ["grade_id"], name: "index_students_on_grade_id"
   end
 
 end

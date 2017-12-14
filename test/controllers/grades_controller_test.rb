@@ -17,7 +17,8 @@ class GradesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create grade" do
     assert_difference('Grade.count') do
-      post grades_url, params: { grade: { year: @grade.year } }
+      grade_year = 3000
+      post grades_url, params: { grade: { year: grade_year } }
     end
 
     assert_redirected_to grade_url(Grade.last)
