@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString@sample.com
+  last_name: MyString
+  first_name: MyString
+  document_number: MyString
+  docket_number: 1
+  grade_id: 1
+
+two:
+  email: MyString@sample.com
+  last_name: MyString
+  first_name: MyString
+  document_number: MyString
+  docket_number: 12
+  grade_id: 2

@@ -1,0 +1,63 @@
+<%= form_with(model: student, local: true) do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group row">
+    <%= form.label :email, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4">
+      <%= form.text_field :email, id: :student_email, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :last_name, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4">
+      <%= form.text_field :last_name, id: :student_last_name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :first_name, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4"> 
+      <%= form.text_field :first_name, id: :student_first_name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :document_number, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4">
+      <%= form.text_field :document_number, id: :student_document_number, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :docket_number, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4">
+      <%= form.number_field :docket_number, id: :student_docket_number, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :grade_id, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4">
+    
+    <%= form.select :grade_id, options_for_select(Grade.all.map{ |s| [s.year, s.id] }, student.grade_id), :include_blank => student.grade.blank? %>        
+    
+    </div>
+  </div>
+
+  <div class="actions form-group row">
+    <div class="col-sm-10">
+      <%= form.submit class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>

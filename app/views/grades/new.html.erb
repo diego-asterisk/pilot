@@ -1,5 +1,7 @@
 <h1>New Grade</h1>
-
+<%
+@grade.year = Time.now.strftime "%Y" if ! @grade.year
+%>
 <%= render 'form', grade: @grade %>
 
 <%= link_to 'Back', grades_path %>
