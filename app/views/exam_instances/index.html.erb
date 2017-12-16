@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Exam Instances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Exam date</th>
+      <th>Min score</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exam_instances.each do |exam_instance| %>
+      <tr>
+        <td><%= exam_instance.title %></td>
+        <td><%= exam_instance.exam_date %></td>
+        <td><%= exam_instance.min_score %></td>
+        <td><%= link_to 'Show', exam_instance %></td>
+        <td><%= link_to 'Edit', edit_exam_instance_path(exam_instance) %></td>
+        <td><%= link_to 'Destroy', exam_instance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Exam Instance', new_exam_instance_path %>

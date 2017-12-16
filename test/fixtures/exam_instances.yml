@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  exam_date: 2017-12-16 00:00:23
+  min_score: 9.99
+
+two:
+  title: MyString
+  exam_date: 2017-12-16 00:00:23
+  min_score: 9.99

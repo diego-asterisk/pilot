@@ -6,4 +6,5 @@ class Student < ApplicationRecord
   validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'error format email' }
   
   belongs_to :grade
+  has_and_belongs_to_many :exam_instances
 end

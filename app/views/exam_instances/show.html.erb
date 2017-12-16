@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @exam_instance.title %>
+</p>
+
+<p>
+  <strong>Exam date:</strong>
+  <%= @exam_instance.exam_date %>
+</p>
+
+<p>
+  <strong>Min score:</strong>
+  <%= @exam_instance.min_score %>
+</p>
+
+<%= link_to 'Edit', edit_exam_instance_path(@exam_instance) %> |
+<%= link_to 'Back', exam_instances_path %>

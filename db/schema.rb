@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213003153) do
+ActiveRecord::Schema.define(version: 20171216030023) do
+
+  create_table "exam_instances", force: :cascade do |t|
+    t.string "title"
+    t.datetime "exam_date"
+    t.decimal "min_score", precision: 4, scale: 2
+    t.integer "grade_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["grade_id"], name: "index_exam_instances_on_grade_id"
+  end
 
   create_table "grades", force: :cascade do |t|
     t.integer "year"
