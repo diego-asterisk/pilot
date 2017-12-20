@@ -69,6 +69,6 @@ class ExamInstancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exam_instance_params
-      params.require(:exam_instance).permit(:title, :exam_date, :min_score)
+      params.require(:exam_instance).permit(:title, :exam_date, :min_score, :grade_id)
     end
 end

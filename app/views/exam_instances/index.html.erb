@@ -2,12 +2,13 @@
 
 <h1>Exam Instances</h1>
 
-<table>
+<table class="table table-responsive-md table-striped">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Exam date</th>
+      <th>Grade</th>
       <th>Min score</th>
+      <th>Exam date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +17,9 @@
     <% @exam_instances.each do |exam_instance| %>
       <tr>
         <td><%= exam_instance.title %></td>
-        <td><%= exam_instance.exam_date %></td>
+        <td><%= exam_instance.grade.year %></td>
         <td><%= exam_instance.min_score %></td>
+        <td><%= exam_instance.exam_date %></td>
         <td><%= link_to 'Show', exam_instance %></td>
         <td><%= link_to 'Edit', edit_exam_instance_path(exam_instance) %></td>
         <td><%= link_to 'Destroy', exam_instance, method: :delete, data: { confirm: 'Are you sure?' } %></td>

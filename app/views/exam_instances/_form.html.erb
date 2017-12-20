@@ -11,22 +11,45 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :exam_instance_title %>
+
+
+  <div class="field form-group row">
+    <%= form.label :title, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4">
+      <%= form.text_field :title, id: :exam_instance_title, class: 'form-control'  %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :exam_date %>
-    <%= form.datetime_select :exam_date, id: :exam_instance_exam_date %>
+  <div class="field form-group row">
+    <%= form.label :grade_id, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4">
+    
+    <%= form.select :grade_id, options_for_select(Grade.all.map{ |s| [s.year, s.id] }, exam_instance.grade_id), {:include_blank => exam_instance.grade.blank?}, { :class => 'form-control col-sm-6'}  %>        
+    
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :min_score %>
-    <%= form.text_field :min_score, id: :exam_instance_min_score %>
+
+  <div class="field form-group row">
+    <%= form.label :min_score, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4">
+      <%= form.text_field :min_score, id: :exam_instance_min_score, class: 'form-control'  %>
+    </div>
+  </div>
+  
+
+  <div class="field form-group row">
+    <%= form.label :exam_date, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4">
+      <%= form.datetime_select :exam_date, {id: :exam_instance_exam_date}, {:class => 'datepicker'} %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  
+
+  <div class="actions form-group row">
+    <div class="col-sm-10">
+      <%= form.submit class: 'btn btn-success' %>
+    </div>
   </div>
 <% end %>
