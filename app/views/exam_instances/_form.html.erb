@@ -41,7 +41,7 @@
   <div class="field form-group row">
     <%= form.label :exam_date, class: 'col-sm-2 col-form-label'  %>
     <div class="col-sm-4">
-      <%= form.datetime_select :exam_date, {id: :exam_instance_exam_date}, {:class => 'datepicker'} %>
+      <%= form.datetime_select :exam_date, {id: :exam_instance_exam_date,:datetime_separator => '<br>'}, {:class => 'form-control', :style => 'width: auto; display: inline'} %>        
     </div>
   </div>
 

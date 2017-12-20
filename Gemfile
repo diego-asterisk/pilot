@@ -34,6 +34,8 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'autoprefixer-rails'
 gem 'sprockets-rails'
 gem 'jquery-rails'
+# mejorar el input datetime
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
