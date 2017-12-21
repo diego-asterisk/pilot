@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class ExamInstancesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
+    sign_in professors(:one)
     @exam_instance = exam_instances(:one)
   end
 

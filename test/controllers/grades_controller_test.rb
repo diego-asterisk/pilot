@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class GradesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
+    sign_in professors(:one)
     @grade = grades(:one)
   end
 
