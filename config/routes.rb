@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :professors
+  root :to => 'grades#index'
   resources :exam_instances
   resources :students
   resources :grades
