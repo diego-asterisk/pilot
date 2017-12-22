@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_menu
   before_action :authenticate_professor!
 
   # GET /students
@@ -63,6 +64,9 @@ class StudentsController < ApplicationController
   end
 
   private
+    def set_menu
+      @menu = 'students'
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_student
       @student = Student.find(params[:id])

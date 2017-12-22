@@ -70,16 +70,24 @@ Result.create(score: 8, student_id: list2016[2], exam_instance_id: exam[2])
 Result.create(score: 8, student_id: list2016[3], exam_instance_id: exam[0])
 Result.create(score: 3, student_id: list2016[3], exam_instance_id: exam[1])
 
+Result.create(score: 7, student_id: list2016[4], exam_instance_id: exam[0])
+Result.create(score: 8, student_id: list2016[4], exam_instance_id: exam[1])
+Result.create(score: 9, student_id: list2016[4], exam_instance_id: exam[2])
 
-Result.create(score: 10, student_id: list2016[1], exam_instance_id: exam[3])
-Result.create(score: 6, student_id: list2016[1], exam_instance_id: exam[4])
-Result.create(score: 1, student_id: list2016[1], exam_instance_id: exam[5])
 
-Result.create(score: 8, student_id: list2016[2], exam_instance_id: exam[3])
-Result.create(score: 8, student_id: list2016[2], exam_instance_id: exam[4])
-Result.create(score: 8, student_id: list2016[2], exam_instance_id: exam[5])
+Result.create(score: 10, student_id: list2017[1], exam_instance_id: exam[3])
+Result.create(score: 6, student_id: list2017[1], exam_instance_id: exam[4])
+Result.create(score: 1, student_id: list2017[1], exam_instance_id: exam[5])
 
-Result.create(score: 8, student_id: list2016[3], exam_instance_id: exam[3])
-Result.create(score: 3, student_id: list2016[3], exam_instance_id: exam[4])
+Result.create(score: 8, student_id: list2017[2], exam_instance_id: exam[3])
+Result.create(score: 8, student_id: list2017[2], exam_instance_id: exam[4])
+Result.create(score: 8, student_id: list2017[2], exam_instance_id: exam[5])
+
+Result.create(score: 8, student_id: list2017[3], exam_instance_id: exam[3])
+Result.create(score: 3, student_id: list2017[3], exam_instance_id: exam[4])
+
+Result.create(score: 5, student_id: list2017[4], exam_instance_id: exam[3])
+Result.create(score: 6, student_id: list2017[4], exam_instance_id: exam[4])
+Result.create(score: 5, student_id: list2017[4], exam_instance_id: exam[5])
 
 

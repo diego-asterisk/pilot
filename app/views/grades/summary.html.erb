@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Summary</h1>
+
+<% if session[:grade_id].present? %>
+
+<table class="table table-responsive-md table-striped">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grades.each do |grade| %>
+      <tr>
+        <td><%= grade.year %></td>
+        <td><%= link_to 'Show', grade %></td>
+        <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
+        <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table table-responsive-md table-striped">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.grade.year %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div style="margin-bottom: 7em">
+<%= link_to 'New Grade', new_grade_path %>
+</div>
+
+<% else %>
+<p class="info">No hay una cursada elegida.</p>
+<p class="warning">Elegir una cursada para ver el reporte: 
+<%= link_to "Grades", grades_path, {:method => :get}%>        
+</p>
+<% end %>

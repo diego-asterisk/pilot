@@ -17,7 +17,7 @@
 
 <p>
   <strong>Exam date:</strong>
-  <%= @exam_instance.exam_date %>
+  <%= @exam_instance.exam_date.strftime('%d/%m/%Y %H:%M') %>
 </p>
 
 <%= link_to 'Edit', edit_exam_instance_path(@exam_instance) %> |

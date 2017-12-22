@@ -1,5 +1,7 @@
 class GradesController < ApplicationController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
+  before_action :set_menu
+  before_action :authenticate_professor!
 
   # GET /grades
   # GET /grades.json
@@ -19,6 +21,21 @@ class GradesController < ApplicationController
 
   # GET /grades/1/edit
   def edit
+  end
+
+  # GET /summary
+  def summary
+    @grades = Grade.all
+    @students = Student.all
+    @menu = 'summary'
+  end
+
+  # GET /selected
+  def selected
+    session[:grade_id] = params[:id]
+    p params[:id]
+#    algo malo
+    redirect_to '/grades'
   end
 
   # POST /grades
@@ -62,6 +79,9 @@ class GradesController < ApplicationController
   end
 
   private
+    def set_menu
+      @menu = 'grades'
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_grade
       @grade = Grade.find(params[:id])

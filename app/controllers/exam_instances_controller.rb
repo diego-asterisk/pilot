@@ -1,5 +1,7 @@
 class ExamInstancesController < ApplicationController
   before_action :set_exam_instance, only: [:show, :edit, :update, :destroy]
+  before_action :set_menu
+  before_action :authenticate_professor!
 
   # GET /exam_instances
   # GET /exam_instances.json
@@ -62,6 +64,9 @@ class ExamInstancesController < ApplicationController
   end
 
   private
+    def set_menu
+      @menu = 'exam_instances'
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_exam_instance
       @exam_instance = ExamInstance.find(params[:id])
