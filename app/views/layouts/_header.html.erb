@@ -21,7 +21,7 @@
             </li>
             
             <li class="nav-item <%='active' if 'results'==@menu %>">
-                <a class="nav-link" href="#">Results</a>
+            <%= link_to "Result", results_path, {:method => :get, :class => 'nav-link'}%>        
             </li>
             
 <!--        <li class="nav-item dropdown <%='active' if 'exam_instances'==@menu %>">

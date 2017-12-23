@@ -1,0 +1,45 @@
+<%= form_with(model: result, local: true) do |form| %>
+  <% if result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(result.errors.count, "error") %> prohibited this result from being saved:</h2>
+
+      <ul>
+      <% result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group row">
+    <%= form.label :score, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4">
+      <%= form.text_field :score, id: :result_score, class: 'form-control' %>
+    </div>
+  </div>
+
+
+  <div class="field form-group row">
+    <%= form.label :student_id, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4">
+    
+    <%= form.select :student_id, options_for_select(Student.all.map{ |s| [s.first_name + ' ' + s.last_name, s.id] }, result.student_id), { :include_blank => result.student.blank?}, { :class => 'form-control col-sm-6'} %>        
+    
+    </div>
+  </div>
+
+  <div class="field form-group row">
+    <%= form.label :exam_instance_id, class: 'col-sm-2 col-form-label'  %>
+    <div class="col-sm-4">
+    
+    <%= form.select :exam_instance_id, options_for_select(ExamInstance.all.map{ |s| [s.title, s.id] }, result.exam_instance_id), { :include_blank => result.exam_instance.blank?}, { :class => 'form-control col-sm-6'} %>        
+    
+    </div>
+  </div>
+
+  <div class="actions form-group row">
+    <div class="col-sm-10">
+      <%= form.submit class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>
