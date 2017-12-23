@@ -1,5 +1,6 @@
 Pilot: Sistema de gestion de la cursada
 
+rails db:migrate para preparar la base de datos
 
 rails db:seed para llenar con datos iniciales
 
