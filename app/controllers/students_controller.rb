@@ -6,7 +6,12 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @cursada = ''
+    if session[:grade_id].present?
+      @grades = Grade.where('id = ?',session[:grade_id])
+      @cursada = @grades.first.year
+      @students = Student.where('grade_id = ?',session[:grade_id])
+    end
   end
 
   # GET /students/1

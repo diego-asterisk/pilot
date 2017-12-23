@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Exam Instances</h1>
+<h1>Exam Instances <%= @cursada %></h1>
+
+<% if session[:grade_id].present? %>
+
 
 <table class="table table-responsive-md table-striped">
   <thead>
@@ -32,4 +35,15 @@
 
 <div style="margin-bottom: 7em">
 <%= link_to 'New Exam Instance', new_exam_instance_path %>
+|
+<%= link_to "Change Grade", grades_path, {:method => :get}%>        
 </div>
+
+<% else %>
+
+<p class="info">No hay una cursada elegida.</p>
+<p class="warning">Elegir una cursada para ver el reporte: 
+<%= link_to "Grades", grades_path, {:method => :get}%>        
+</p>
+
+<% end %>

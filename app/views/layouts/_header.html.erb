@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-info">
-    <a class="navbar-brand" href="#">Pilot <%= session[:grade_id]%></a>
+    <a class="navbar-brand" href="#">Pilot </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbarXs">
         <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
                 <a class="nav-link" href="#">Results</a>
             </li>
             
-        <li class="nav-item dropdown <%='active' if 'exam_instances'==@menu %>">
+<!--        <li class="nav-item dropdown <%='active' if 'exam_instances'==@menu %>">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Exam Instances <span class="caret"></span></a>
           <ul class="dropdown-menu" style="background: cadetblue;font-family: verdana, arial, helvetica, sans-serif;
     font-size: 13px;">
@@ -32,7 +32,7 @@
             <li class="nav-item"><a class="nav-link" href="#">List</a></li>
           </ul>
         </li>
-
+-->
             <li class="nav-item <%='active' if 'summary'==@menu %>">
             <%= link_to "Summary", summary_path, {:method => :get, :class => 'nav-link'}%>        
             </li>

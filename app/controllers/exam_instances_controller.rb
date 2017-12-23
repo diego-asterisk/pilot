@@ -6,7 +6,12 @@ class ExamInstancesController < ApplicationController
   # GET /exam_instances
   # GET /exam_instances.json
   def index
-    @exam_instances = ExamInstance.all
+    @cursada = ''
+    if session[:grade_id].present?
+      @grades = Grade.where('id = ?',session[:grade_id])
+      @cursada = @grades.first.year
+      @exam_instances = ExamInstance.where('grade_id = ?',session[:grade_id])
+    end
   end
 
   # GET /exam_instances/1
@@ -62,7 +67,7 @@ class ExamInstancesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     def set_menu
       @menu = 'exam_instances'

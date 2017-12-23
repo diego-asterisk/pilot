@@ -5,4 +5,10 @@ class ExamInstance < ApplicationRecord
   belongs_to :grade
   has_many :results
   has_many :students, :through => :results
+  
+  
+  def aprobado?(nota)
+    nota >= self.min_score
+  end
+
 end

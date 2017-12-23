@@ -1,53 +1,56 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Summary</h1>
+<h1>Summary <%= @cursada %></h1>
 
 <% if session[:grade_id].present? %>
 
+
 <table class="table table-responsive-md table-striped">
   <thead>
     <tr>
-      <th>Year</th>
-      <th colspan="3"></th>
+    <% @columns.each do |column| %>
+      <th><%= column %></th>
+    <% end %>
     </tr>
   </thead>
-
+  
   <tbody>
-    <% @grades.each do |grade| %>
+    <% @results.each do |res| %>
       <tr>
-        <td><%= grade.year %></td>
-        <td><%= link_to 'Show', grade %></td>
-        <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
-        <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% res.each do |dat| %>
+          <td><%= dat %></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<hr>
+
 <table class="table table-responsive-md table-striped">
   <thead>
     <tr>
-      <th>Year</th>
-      <th colspan="3"></th>
+      <th>Instancia</th>
+      <th>Aprobados</th>
+      <th>Desaprobados</th>
+      <th>Ausentes</th>
+      <th>% Aprobación</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @students.each do |student| %>
+    <% @totales.each do |tot| %>
       <tr>
-        <td><%= student.grade.year %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% tot.each do |t|%>
+        <td><%= t %></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
 
 <div style="margin-bottom: 7em">
-<%= link_to 'New Grade', new_grade_path %>
+  <%= link_to "Change Grade", grades_path, {:method => :get}%>        
 </div>
 
 <% else %>
