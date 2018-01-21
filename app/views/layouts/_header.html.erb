@@ -8,6 +8,7 @@
 
     <div class="navbar-collapse collapse" id="collapsingNavbarXs">
         <ul class="navbar-nav">
+  <% if professor_signed_in? %>
             <li class="nav-item <%='active' if 'grades'==@menu %>">
             <%= link_to t(:Grades), grades_path, {:method => :get, :class => 'nav-link'}%>        
             </li>
@@ -36,12 +37,14 @@
             <li class="nav-item <%='active' if 'summary'==@menu %>">
             <%= link_to t(:Summary), summary_path, {:method => :get, :class => 'nav-link'}%>        
             </li>
-        
+   <% end %>        
         </ul>
       <ul class="nav navbar-nav ml-auto">
   <% if professor_signed_in? %>
   <li class="nav-item">
-    <p class="navbar-text"><%= t(:Connected_as) %> <%= current_professor.email %>. <%= t(:Not_you) %>? -></p>
+    <p class="navbar-text"><%= t(:Connected_as) %> <%= current_professor.email %>. <%= t(:Not_you) %>?
+     ➜ 
+</p>
   </li>  
         <li class="nav-item">
             <%= link_to t(:Log_off), destroy_professor_session_path, {:method => :delete, :class => 'nav-link'}%>        
