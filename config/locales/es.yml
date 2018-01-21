@@ -29,23 +29,24 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
-  foot: "record of notes of the evaluations of different courses of the subject"
-  Log_in: "Log in"
+es:
+  hello: "Hola mundo"
+  foot: "registro de las notas de las evaluaciones de​ diferentes​ cursadas de la materia"
+  Log_in: "Iniciar sesión"
   Login: "Login"
-  Remember_me: "Remember me"
-  Sign_up: "Sign up"
+  Remember_me: "Recordarme"
+  Sign_up: "Crear una cuenta"
   Email: "Email"
-  Password: "Password"
-  Log_off: "Log off"
-
-  Grades: "Grades"
-  Students: "Students"
-  Exam_Instances: "Exam Instances"
-  Results: "Results"
-  Summary: "Summary"
+  Password: "Password"  
+  Log_off: "Cerrar"
   
-  Connected_as: "Connected as"
-  Not_you: "Is not you"
+  Grades: "Cursadas"
+  Students: "Estudiantes"
+  Exam_Instances: "Instancias de Evaluación"
+  Results: "Resultados"
+  Summary: "Resumen"
+
+  Connected_as: "Conectado como"
+  Not_you: "No eres tú"
+  
   

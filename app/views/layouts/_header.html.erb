@@ -9,19 +9,19 @@
     <div class="navbar-collapse collapse" id="collapsingNavbarXs">
         <ul class="navbar-nav">
             <li class="nav-item <%='active' if 'grades'==@menu %>">
-            <%= link_to "Grades", grades_path, {:method => :get, :class => 'nav-link'}%>        
+            <%= link_to t(:Grades), grades_path, {:method => :get, :class => 'nav-link'}%>        
             </li>
             
             <li class="nav-item <%='active' if 'students'==@menu %>">
-            <%= link_to "Students", students_path, {:method => :get, :class => 'nav-link'}%>        
+            <%= link_to t(:Students), students_path, {:method => :get, :class => 'nav-link'}%>        
             </li>
             
             <li class="nav-item <%='active' if 'exam_instances'==@menu %>">
-            <%= link_to "Exam Instances", exam_instances_path, {:method => :get, :class => 'nav-link'}%>        
+            <%= link_to t(:Exam_Instances), exam_instances_path, {:method => :get, :class => 'nav-link'}%>        
             </li>
             
             <li class="nav-item <%='active' if 'results'==@menu %>">
-            <%= link_to "Results", results_path, {:method => :get, :class => 'nav-link'}%>        
+            <%= link_to t(:Results), results_path, {:method => :get, :class => 'nav-link'}%>        
             </li>
             
 <!--        <li class="nav-item dropdown <%='active' if 'exam_instances'==@menu %>">
@@ -34,24 +34,24 @@
         </li>
 -->
             <li class="nav-item <%='active' if 'summary'==@menu %>">
-            <%= link_to "Summary", summary_path, {:method => :get, :class => 'nav-link'}%>        
+            <%= link_to t(:Summary), summary_path, {:method => :get, :class => 'nav-link'}%>        
             </li>
         
         </ul>
       <ul class="nav navbar-nav ml-auto">
   <% if professor_signed_in? %>
   <li class="nav-item">
-    <p class="navbar-text">Conectado como <%= current_professor.email %>. No eres t&uacute;?</p>
+    <p class="navbar-text"><%= t(:Connected_as) %> <%= current_professor.email %>. <%= t(:Not_you) %>? -></p>
   </li>  
         <li class="nav-item">
-            <%= link_to "Log off", destroy_professor_session_path, {:method => :delete, :class => 'nav-link'}%>        
+            <%= link_to t(:Log_off), destroy_professor_session_path, {:method => :delete, :class => 'nav-link'}%>        
         </li>
   <% else %>
         <li class="nav-item">
-            <%= link_to "Sign Up", new_professor_registration_path, {:method => :get, :class => 'nav-link'}%>        
+            <%= link_to t(:Sign_up), new_professor_registration_path, {:method => :get, :class => 'nav-link'}%>        
         </li>
         <li class="nav-item">
-            <%= link_to "Login", new_professor_session_path, {:method => :get, :class => 'nav-link'}%>        
+            <%= link_to t(:Login), new_professor_session_path, {:method => :get, :class => 'nav-link'}%>        
         </li>
   <% end %>
       </ul>
