@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="tit">Results</h1>
+<h1 class="tit">Results <%= @cursada %></h1>
 
+<p>
+<%= link_to t(:Change_grade), grades_path, {:method => :get}%>        
+</p>
 
 <table class="table table-responsive-md table-striped">
   <thead>
@@ -31,5 +34,7 @@
 
 <div style="margin-bottom: 7em">
 <%= link_to 'New Result', new_result_path %>
+|
+<%= link_to t(:Change_grade), grades_path, {:method => :get}%>        
 </div>
 

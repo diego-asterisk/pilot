@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="tit">Students <%= @cursada %></h1>
-
+<p>
+<%= link_to t(:Change_grade), grades_path, {:method => :get}%>        
+</p>
 <% if session[:grade_id].present? %>
 
 <table class="table table-responsive-md table-striped">
@@ -39,7 +41,7 @@
 <div style="margin-bottom: 7em">
 <%= link_to 'New Student', new_student_path %>
 |
-<%= link_to "Change Grade", grades_path, {:method => :get}%>        
+<%= link_to t(:Change_grade), grades_path, {:method => :get}%>        
 </div>
 
 <% else %>

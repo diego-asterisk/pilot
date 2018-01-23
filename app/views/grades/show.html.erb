@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Year:</strong>
+  <strong><%= t(:Year) %>:</strong>
   <%= @grade.year %>
 </p>
 
-<%= link_to 'Edit', edit_grade_path(@grade) %> |
-<%= link_to 'Back', grades_path %>
+<%= link_to t(:Edit), edit_grade_path(@grade) %> |
+<%= link_to t(:Back), grades_path %>

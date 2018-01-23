@@ -4,6 +4,9 @@
 
 <% if session[:grade_id].present? %>
 
+<p>
+<%= link_to t(:Change_grade), grades_path, {:method => :get}%>        
+</p>
 
 <table class="table table-responsive-md table-striped">
   <thead>
@@ -36,7 +39,7 @@
 <div style="margin-bottom: 7em">
 <%= link_to 'New Exam Instance', new_exam_instance_path %>
 |
-<%= link_to "Change Grade", grades_path, {:method => :get}%>        
+<%= link_to t(:Change_grade), grades_path, {:method => :get}%>        
 </div>
 
 <% else %>

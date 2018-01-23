@@ -48,6 +48,26 @@ es:
 
   Connected_as: "Conectado como"
   Not_you: "No eres tú"
+
+  Change_grade: "Cambiar de Cursada"
+  New_grade: "Agregar Cursada"
+  Editing_grade: "Editar Cursada"
+  Grade: "Cursada"
+  Grades: "Cursadas"
+  Select: "Elegir Default"
+  Current: "Actual"
+  Choice: "Elección"
+  Year: "Año"
+  
+  Show: "Mostrar"
+  Edit: "Editar"
+  Destroy: "Eliminar"
+  Back: "Atrás"
+  create: Crear
+  submit: Guardar
+  update: Actualizar
+
+
   
   activerecord:
     errors:

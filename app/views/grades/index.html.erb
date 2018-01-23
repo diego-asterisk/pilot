@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="tit">Grades</h1>
+<h1 class="tit"><%= t(:Grades) %></h1>
 
 <table class="table table-responsive-md table-striped">
   <thead>
     <tr>
-      <th>Year</th>
-      <th>Choice</th>
+      <th><%= t(:Year) %></th>
+      <th><%= t(:Choice) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,14 +17,14 @@
         <td><%= grade.year %></td>
         <td>
         <% if grade.id.to_s == session[:grade_id] %>
-          Current
+          <%= t(:Current) %>
         <% else %>
-          <%= link_to 'Select', selected_path(grade) %>
+          <%= link_to t(:Select), selected_path(grade) %>
         <% end %>
         </td>
-        <td><%= link_to 'Show', grade %></td>
-        <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
-        <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t(:Show), grade %></td>
+        <td><%= link_to t(:Edit), edit_grade_path(grade) %></td>
+        <td><%= link_to t(:Destroy), grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,5 +33,5 @@
 <br>
 
 <div style="margin-bottom: 7em">
-<%= link_to 'New Grade', new_grade_path %>
+<%= link_to t(:New_grade), new_grade_path %>
 </div>

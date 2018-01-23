@@ -1,6 +1,6 @@
-<h1>Editing Grade</h1>
+<h1><%= t(:Editing_grade) %></h1>
 
 <%= render 'form', grade: @grade %>
 
-<%= link_to 'Show', @grade %> |
-<%= link_to 'Back', grades_path %>
+<%= link_to t(:Show), @grade %> |
+<%= link_to t(:Back), grades_path %>

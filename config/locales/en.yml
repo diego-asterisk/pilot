@@ -49,3 +49,22 @@ en:
   Connected_as: "Connected as"
   Not_you: "Is not you"
   
+  Change_grade: "Change Grade"
+  New_grade: "New Grade"
+  Editing_grade: "Editing Grade"
+  Grade: "Grade"
+  Grades: "Grades"
+  Select: "Select"
+  Current: "Current"
+  Choice: "Choice"
+  Year: "Year"
+  
+  Show: "Show"
+  Edit: "Edit"
+  Destroy: "Destroy"
+  Back: "Back"
+  create: Create
+  submit: Save
+  update: Update
+  
+  
