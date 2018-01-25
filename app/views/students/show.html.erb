@@ -1,34 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Email:</strong>
+  <strong><%= t(:Email) %>:</strong>
   <%= @student.email %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
+  <strong><%= t(:Last_name) %>:</strong>
   <%= @student.last_name %>
 </p>
 
 <p>
-  <strong>Fist name:</strong>
+  <strong><%= t(:First_name) %>:</strong>
   <%= @student.first_name %>
 </p>
 
 <p>
-  <strong>Document number:</strong>
+  <strong><%= t(:Document_number) %>:</strong>
   <%= @student.document_number %>
 </p>
 
 <p>
-  <strong>Docket number:</strong>
+  <strong><%= t(:Docket_number) %>:</strong>
   <%= @student.docket_number %>
 </p>
 
 <p>
-  <strong>Grade:</strong>
+  <strong><%= t(:Grade) %>:</strong>
   <%= @student.grade.year %>
 </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<%= link_to t(:Edit), edit_student_path(@student) %> |
+<%= link_to t(:Back), students_path %>

@@ -39,6 +39,9 @@ en:
   Email: "Email"
   Password: "Password"
   Log_off: "Log off"
+  password_confirmation: "Password confirmation"
+  characters_minimum: "characters minimum"
+  are_sure: "Are you sure"
 
   Grades: "Grades"
   Students: "Students"
@@ -52,6 +55,8 @@ en:
   Change_grade: "Change Grade"
   New_grade: "New Grade"
   Editing_grade: "Editing Grade"
+  No_grade: "There is no choosen grade"
+  For_report: "Choose a grade to see the report"
   Grade: "Grade"
   Grades: "Grades"
   Select: "Select"
@@ -67,4 +72,12 @@ en:
   submit: Save
   update: Update
   
+  Student: "Student"
+  Students: "Students"
+  New_student: "New Student"
+  Last_name: "Last name"
+  First_name: "First name"
+  Docket_number: "Docket number"
+  Document_number: "Document number"
+  Editing_Student: "Editing Student"
   

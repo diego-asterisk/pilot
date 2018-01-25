@@ -39,6 +39,10 @@ es:
   Email: "Email"
   Password: "Password"  
   Log_off: "Cerrar"
+  password_confirmation: "Confirmar password"
+  characters_minimum: "caracteres mínimo"
+  are_sure: "Está seguro"
+
   
   Grades: "Cursadas"
   Students: "Estudiantes"
@@ -52,6 +56,8 @@ es:
   Change_grade: "Cambiar de Cursada"
   New_grade: "Agregar Cursada"
   Editing_grade: "Editar Cursada"
+  No_grade: "No hay una cursada elegida"
+  For_report: "Elegir una cursada para ver el reporte"  
   Grade: "Cursada"
   Grades: "Cursadas"
   Select: "Elegir Default"
@@ -66,6 +72,18 @@ es:
   create: Crear
   submit: Guardar
   update: Actualizar
+
+  Student: "Alumno"
+  Students: "Alumnos"
+  New_student: "Nuevo Alumno"
+  Last_name: "Apellido"
+  First_name: "Nombre"
+  Docket_number: "Legajo"
+  Document_number: "Documento"
+  Editing_Student: "Editar Alumno"
+
+
+
 
 
   

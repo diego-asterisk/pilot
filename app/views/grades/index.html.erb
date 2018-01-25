@@ -16,7 +16,7 @@
       <tr>
         <td><%= grade.year %></td>
         <td>
-        <% if grade.id.to_s == session[:grade_id] %>
+        <% if grade.id == session[:grade_id] || grade.id.to_s == session[:grade_id] %>
           <%= t(:Current) %>
         <% else %>
           <%= link_to t(:Select), selected_path(grade) %>
@@ -24,7 +24,7 @@
         </td>
         <td><%= link_to t(:Show), grade %></td>
         <td><%= link_to t(:Edit), edit_grade_path(grade) %></td>
-        <td><%= link_to t(:Destroy), grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t(:Destroy), grade, method: :delete, data: { confirm: t(:are_sure) + '?' } %></td>
       </tr>
     <% end %>
   </tbody>
