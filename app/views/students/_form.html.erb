@@ -50,7 +50,7 @@
     <%= form.label :grade_id, t(:Grade), class: 'col-sm-2 col-form-label'  %>
     <div class="col-sm-4">
     
-    <%= form.select :grade_id, options_for_select(Grade.all.map{ |s| [s.year, s.id] }, student.grade_id), { :include_blank => student.grade.blank?}, { :class => 'form-control col-sm-6'} %>        
+    <%= form.select :grade_id, options_for_select(Grade.all.map{ |s| [s.year, s.id] }, student.grade_id || session[:grade_id]), { :include_blank => student.grade.blank?}, { :class => 'form-control col-sm-6'} %>        
     
     </div>
   </div>

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="tit">Exam Instances <%= @cursada %></h1>
+<h1 class="tit"><%= t(:Exam_Instances) %> <%= @cursada %></h1>
 
 <% if session[:grade_id].present? %>
 
@@ -11,10 +11,10 @@
 <table class="table table-responsive-md table-striped">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Grade</th>
-      <th>Min score</th>
-      <th>Exam date</th>
+      <th><%= t(:Title) %></th>
+      <th><%= t(:Grade) %></th>
+      <th><%= t(:Min_score) %></th>
+      <th><%= t(:Exam_date) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,9 +26,9 @@
         <td><%= exam_instance.grade.year %></td>
         <td><%= exam_instance.min_score %></td>
         <td><%= exam_instance.exam_date.strftime('%d/%m/%Y %H:%M') %></td>
-        <td><%= link_to 'Show', exam_instance %></td>
-        <td><%= link_to 'Edit', edit_exam_instance_path(exam_instance) %></td>
-        <td><%= link_to 'Destroy', exam_instance, method: :delete, data: { confirm: t(:are_sure) + '?' } %></td>
+        <td><%= link_to t(:Show), exam_instance %></td>
+        <td><%= link_to t(:Edit), edit_exam_instance_path(exam_instance) %></td>
+        <td><%= link_to t(:Destroy), exam_instance, method: :delete, data: { confirm: t(:are_sure) + '?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,16 +37,16 @@
 <br>
 
 <div style="margin-bottom: 7em">
-<%= link_to 'New Exam Instance', new_exam_instance_path %>
+<%= link_to t(:New_Exam_Instance), new_exam_instance_path %>
 |
 <%= link_to t(:Change_grade), grades_path, {:method => :get}%>        
 </div>
 
 <% else %>
 
-<p class="info">No hay una cursada elegida.</p>
-<p class="warning">Elegir una cursada para ver el reporte: 
-<%= link_to "Grades", grades_path, {:method => :get}%>        
+<p class="info"><%= t(:No_grade) %>.</p>
+<p class="warning"><%= t(:For_report) %>: 
+<%= link_to t(:Change_grade), grades_path, {:method => :get}%>        
 </p>
 
 <% end %>

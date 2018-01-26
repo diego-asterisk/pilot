@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong><%= t(:Title) %>:</strong>
   <%= @exam_instance.title %>
 </p>
 
 <p>
-  <strong>Grade:</strong>
+  <strong><%= t(:Grade) %>:</strong>
   <%= @exam_instance.grade.year %>
 </p>
 
 <p>
-  <strong>Min score:</strong>
+  <strong><%= t(:Min_score) %>:</strong>
   <%= @exam_instance.min_score %>
 </p>
 
 <p>
-  <strong>Exam date:</strong>
+  <strong><%= t(:Exam_date) %>:</strong>
   <%= @exam_instance.exam_date.strftime('%d/%m/%Y %H:%M') %>
 </p>
 
-<%= link_to 'Edit', edit_exam_instance_path(@exam_instance) %> |
-<%= link_to 'Back', exam_instances_path %>
+<%= link_to t(:Edit), edit_exam_instance_path(@exam_instance) %> |
+<%= link_to t(:Back), exam_instances_path %>

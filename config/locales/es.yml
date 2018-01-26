@@ -74,13 +74,20 @@ es:
   update: Actualizar
 
   Student: "Alumno"
-  Students: "Alumnos"
   New_student: "Nuevo Alumno"
   Last_name: "Apellido"
   First_name: "Nombre"
   Docket_number: "Legajo"
   Document_number: "Documento"
   Editing_Student: "Editar Alumno"
+  
+  New_Exam_Instance: "Nueva Instancia de Evaluación"
+  Exam_instance: "Instancia de Evaluación"
+  Editing_Exam_Instance: "Editar Instancia de Evaluación"
+  Title: "Título"
+  Min_score: "Nota Mínima"
+  Exam_date: "Fecha Evaluación"
+
 
 
 

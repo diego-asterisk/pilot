@@ -73,11 +73,17 @@ en:
   update: Update
   
   Student: "Student"
-  Students: "Students"
   New_student: "New Student"
   Last_name: "Last name"
   First_name: "First name"
   Docket_number: "Docket number"
   Document_number: "Document number"
   Editing_Student: "Editing Student"
+  
+  New_Exam_Instance: "New Exam Instance"
+  Exam_instance: "Exam Instance"
+  Editing_Exam_Instance: "Editing Exam Instance"
+  Title: "Title"
+  Min_score: "Min score"
+  Exam_date: "Exam date"
   
