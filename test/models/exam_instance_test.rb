@@ -17,5 +17,10 @@ class ExamInstanceTest < ActiveSupport::TestCase
     exam.exam_date = ''
     assert exam.save, "Saved the valid exam"
   end
+  test "should not approved < Min Score" do
+    # en fixtures/exam_instances.yml esta definido el min_score = 9.99
+    exam = ExamInstance.all[0]
+    assert_not exam.aprobado?(9), "Approved < min_score"
+  end
 
 end

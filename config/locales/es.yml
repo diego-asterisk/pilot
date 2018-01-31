@@ -88,6 +88,14 @@ es:
   Min_score: "Nota Mínima"
   Exam_date: "Fecha Evaluación"
 
+  Instance: "Instancia"
+  Approved: "Aprobados"
+  Disapproved: "Desaprobados"
+  Missing: "Ausentes"
+  Approval: "% Aprobación"
+  Yesi: "Si"
+  Noi: "No"
+  Score: "Nota"
 
 
 

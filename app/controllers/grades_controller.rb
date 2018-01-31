@@ -27,52 +27,11 @@ class GradesController < ApplicationController
   def summary
     @cursada = ''
     if session[:grade_id].present?
-      @columns = ['Legajo','Alumno']
-      @totales = []
-      @totales_aprobado = Hash.new
-      @totales_desaprobado = Hash.new
-      @totales_ausente = Hash.new
-      @grades = Grade.where('id = ?',session[:grade_id])
-      @cursada = @grades.first.year
-      @students = Student.where('grade_id = ?',session[:grade_id])
-      @exams = ExamInstance.where('grade_id = ?',session[:grade_id]).order('exam_date ASC')
-      @exams.each do |e|
-         @columns.push(e.title + ' Nota', 'Aprobado')
-         @totales_ausente[e.id] = 0
-         @totales_aprobado[e.id] = 0
-         @totales_desaprobado[e.id] = 0
-      end
-      @results = []
-      @students.each do |s|
-        parcial = [s.docket_number,s.first_name + ' ' + s.last_name]
-        @exams.each do |e|
-          r = Result.where('exam_instance_id = ? and student_id = ?',e.id, s.id)
-          nota = 'Ausente'
-          aprobado = 'No'
-          if r.count > 0
-            nota = r.first.score
-            aprobado = 'Si' if e.aprobado? nota
-          end
-          if 'Ausente'==nota 
-            @totales_ausente[e.id] = @totales_ausente[e.id] + 1
-          elsif 'No'==aprobado 
-            @totales_aprobado[e.id] = @totales_aprobado[e.id] + 1
-          else
-             @totales_desaprobado[e.id] = @totales_desaprobado[e.id] + 1
-          end          
-          parcial.push(nota, aprobado)
-        end  
-        @results.push(parcial)
-      end
-      # Totales
-      @exams.each do |e|
-         porcentaje = 0
-         presentes = @totales_aprobado[e.id].to_i + @totales_desaprobado[e.id].to_i
-         if presentes > 0
-           porcentaje = (@totales_aprobado[e.id].to_f / presentes.to_f) * 100
-         end
-         @totales.push([e.title, @totales_aprobado[e.id], @totales_desaprobado[e.id], @totales_ausente[e.id], porcentaje.round(2)])
-      end
+      grade = Grade.find(session[:grade_id])
+      @cursada = grade.year
+      @totales = grade.resume_all
+      @results = grade.resume
+      @columns = grade.resume_headers
     end
     @menu = 'summary'
   end
@@ -81,7 +40,7 @@ class GradesController < ApplicationController
   def selected
     session[:grade_id] = params[:id]
     p params[:id]
-#    algo malo
+#  Descomentar 'algo malo' para poder ver la consola web de rails
     redirect_to '/grades'
   end
 

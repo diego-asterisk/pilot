@@ -87,3 +87,12 @@ en:
   Min_score: "Min score"
   Exam_date: "Exam date"
   
+  Instance: "Instance"
+  Approved: "Approved"
+  Disapproved: "Disapproved"
+  Missing: "Missing"
+  Approval: "% Approval"
+  Yesi: "Yes"
+  Noi: "No"
+  Score: "Nota"
+  

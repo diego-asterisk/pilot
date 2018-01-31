@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="tit">Summary <%= @cursada %></h1>
+<h1 class="tit"><%= t(:Summary) %> <%= @cursada %></h1>
 
 <% if session[:grade_id].present? %>
 
@@ -33,11 +33,11 @@
 <table class="table table-responsive-md table-striped">
   <thead>
     <tr>
-      <th>Instancia</th>
-      <th>Aprobados</th>
-      <th>Desaprobados</th>
-      <th>Ausentes</th>
-      <th>% Aprobación</th>
+      <th><%= t(:Instance) %></th>
+      <th><%= t(:Approved) %></th>
+      <th><%= t(:Disapproved) %></th>
+      <th><%= t(:Missing) %></th>
+      <th><%= t(:Approval) %></th>
     </tr>
   </thead>
 
@@ -57,8 +57,8 @@
 </div>
 
 <% else %>
-<p class="info">No hay una cursada elegida.</p>
-<p class="warning">Elegir una cursada para ver el reporte: 
+<p class="info"><%= t(:No_grade) %>.</p>
+<p class="warning"><%= t(:For_report) %>: 
 <%= link_to "Grades", grades_path, {:method => :get}%>        
 </p>
 <% end %>
