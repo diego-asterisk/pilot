@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
+<h1><%= t(:Student) %></h1>
+<h2><%= t(:Docket_number) %> <%= @student.docket_number %></h2>
 
-<p>
-  <strong><%= t(:Email) %>:</strong>
-  <%= @student.email %>
-</p>
+<p id="notice"><%= notice %></p>
 
 <p>
   <strong><%= t(:Last_name) %>:</strong>
@@ -21,8 +19,8 @@
 </p>
 
 <p>
-  <strong><%= t(:Docket_number) %>:</strong>
-  <%= @student.docket_number %>
+  <strong><%= t(:Email) %>:</strong>
+  <%= @student.email %>
 </p>
 
 <p>

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="tit">Results <%= @cursada %></h1>
+<h1 class="tit"><%= t(:Results) %> <%= @cursada %></h1>
 
 <p>
 <%= link_to t(:Change_grade), grades_path, {:method => :get}%>        
@@ -9,10 +9,10 @@
 <table class="table table-responsive-md table-striped">
   <thead>
     <tr>
-      <th>Score</th>
-      <th>Student</th>
-      <th>Exam Instance</th>
-      <th colspan="3"></th>
+      <th><%= t(:Score) %></th>
+      <th><%= t(:Student) %></th>
+      <th><%= t(:Exam_instance) %></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -22,9 +22,8 @@
         <td><%= result.score %></td>
         <td><%= result.student.last_name + ' ' + result.student.first_name %></td>
         <td><%= result.exam_instance.title %></td>
-        <td><%= link_to 'Show', result %></td>
-        <td><%= link_to 'Edit', edit_result_path(result) %></td>
-        <td><%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t(:Edit), edit_result_path(result) %></td>
+        <td><%= link_to t(:Destroy), result, method: :delete, data: { confirm: t(:are_sure) + '?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,7 +32,7 @@
 <br>
 
 <div style="margin-bottom: 7em">
-<%= link_to 'New Result', new_result_path %>
+<%= link_to t(:New_Result), new_result_path %>
 |
 <%= link_to t(:Change_grade), grades_path, {:method => :get}%>        
 </div>

@@ -1,6 +1,6 @@
-<h1>Editing Result</h1>
+<h1><%= t(:Editing_Result) %></h1>
 
 <%= render 'form', result: @result %>
 
-<%= link_to 'Show', @result %> |
-<%= link_to 'Back', results_path %>
+<%= link_to t(:Show), @result %> |
+<%= link_to t(:Back), results_path %>

@@ -6,6 +6,12 @@ class ResultsController < ApplicationController
   # GET /results
   # GET /results.json
   def index
+    @cursada = ''
+    if session[:grade_id].present?
+      @grade = Grade.find(session[:grade_id])
+      @cursada = @grade.year
+    end
+
     @results = Result.all
   end
 

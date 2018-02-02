@@ -1,3 +1,5 @@
+<h1><%= t(:Exam_instance) %></h1>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -6,8 +8,8 @@
 </p>
 
 <p>
-  <strong><%= t(:Grade) %>:</strong>
-  <%= @exam_instance.grade.year %>
+  <strong><%= t(:Exam_date) %>:</strong>
+  <%= @exam_instance.exam_date.strftime('%d/%m/%Y %H:%M') %>
 </p>
 
 <p>
@@ -16,8 +18,8 @@
 </p>
 
 <p>
-  <strong><%= t(:Exam_date) %>:</strong>
-  <%= @exam_instance.exam_date.strftime('%d/%m/%Y %H:%M') %>
+  <strong><%= t(:Grade) %>:</strong>
+  <%= @exam_instance.grade.year %>
 </p>
 
 <%= link_to t(:Edit), edit_exam_instance_path(@exam_instance) %> |
