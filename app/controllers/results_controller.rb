@@ -7,12 +7,16 @@ class ResultsController < ApplicationController
   # GET /results.json
   def index
     @cursada = ''
+    @results = []
     if session[:grade_id].present?
       @grade = Grade.find(session[:grade_id])
       @cursada = @grade.year
+      @results = Result.all.select { |r| r.exam_instance.grade_id == @grade.id }
+      @results = @results.reject { |r| r.student.grade_id =! @grade.id }
+      p '*****'
+      p @grade.id
+      p @results.count
     end
-
-    @results = Result.all
   end
 
   # GET /results/1
@@ -22,6 +26,7 @@ class ResultsController < ApplicationController
 
   # GET /results/new
   def new
+    @grade = Grade.find(session[:grade_id])
     @result = Result.new
   end
 

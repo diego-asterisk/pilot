@@ -23,7 +23,7 @@
     <%= form.label :student_id, t(:Student), class: 'col-sm-2 col-form-label'  %>
     <div class="col-sm-4">
     
-    <%= form.select :student_id, options_for_select(Student.all.map{ |s| [s.first_name + ' ' + s.last_name, s.id] }, result.student_id), { :include_blank => result.student.blank?}, { :class => 'form-control col-sm-6', :disabled => result.persisted?} %> 
+    <%= form.select :student_id, options_for_select(Student.all.select{|e| e.grade_id == @grade.id} .map{ |s| [s.first_name + ' ' + s.last_name, s.id] }, result.student_id), { :include_blank => result.student.blank?}, { :class => 'form-control col-sm-6', :disabled => result.persisted?} %> 
     
     </div>
   </div>
@@ -32,7 +32,7 @@
     <%= form.label :exam_instance_id, t(:Exam_instance), class: 'col-sm-2 col-form-label'  %>
     <div class="col-sm-4">
     
-    <%= form.select :exam_instance_id, options_for_select(ExamInstance.all.map{ |s| [s.title, s.id] }, result.exam_instance_id), { :include_blank => result.exam_instance.blank?}, { :class => 'form-control col-sm-6', :disabled => result.persisted?} %>        
+    <%= form.select :exam_instance_id, options_for_select(ExamInstance.all.select{|e| e.grade_id == @grade.id} .map{ |s| [s.title, s.id] }, result.exam_instance_id), { :include_blank => result.exam_instance.blank?}, { :class => 'form-control col-sm-6', :disabled => result.persisted?} %>        
     
     </div>
   </div>
