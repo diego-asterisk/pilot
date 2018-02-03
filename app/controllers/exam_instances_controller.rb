@@ -17,6 +17,7 @@ class ExamInstancesController < ApplicationController
   # GET /exam_instances/1
   # GET /exam_instances/1.json
   def show
+    @show = 'exam_instances'
   end
 
   # GET /exam_instances/new

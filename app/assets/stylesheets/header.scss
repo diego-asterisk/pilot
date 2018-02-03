@@ -19,3 +19,36 @@
   color: cadetblue
 }
 
+.grades {
+  background-image: image_url('educacion_cursada.jpg');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  min-height: 413px
+}
+.students {
+  background-image: image_url('educacion_estudiantes.jpg');
+  background-repeat: no-repeat;
+  background-position: 62% 100%;
+}
+.exam_instances {
+  background-image: image_url('educacion_evaluaciones.jpg');
+  background-repeat: no-repeat;
+  background-position: 100% 49%;
+}
+.results {
+  background-image: image_url('educacion_notas.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  min-height: 423px
+}
+@media only screen and (max-width: 800px) {
+
+.results {
+  background-image: none;
+}
+.exam_instances {
+  background-image: none;
+}
+
+}
