@@ -101,7 +101,24 @@ es:
   Result: "Resultado"
   Editing_Result: "Editar Resultado"
 
-
+  Exam_created: 'Nueva instancia de evaluación creada.'
+  Exam_updated: 'Se actualizó la instancia de evaluación.'
+  Exam_destroyed: 'Instancia de evaluación eliminada.'
+  Grade_created: 'Nueva Cursada creada.'
+  Grade_updated: 'Se actualizó la cursada.'
+  Grade_destroyed: 'Cursada eliminada.'
+  Result_created: 'Resultado creado.'
+  Result_updated: 'Resultado actualizado.'
+  Result_destroyed: 'Resultado eliminado.'
+  Student_created: 'Nuevo estudiante creado.'
+  Student_updated: 'Se actualizaron los datos del estudiante.'
+  Student_destroyed: 'Estudiante borrado.'
+  
+  
+  
+  
+  
+  
 
   
   activerecord:

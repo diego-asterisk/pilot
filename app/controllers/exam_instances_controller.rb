@@ -36,7 +36,7 @@ class ExamInstancesController < ApplicationController
 
     respond_to do |format|
       if @exam_instance.save
-        format.html { redirect_to @exam_instance, notice: 'Exam instance was successfully created.' }
+        format.html { redirect_to @exam_instance, notice: t(:Exam_created) }
         format.json { render :show, status: :created, location: @exam_instance }
       else
         format.html { render :new }
@@ -50,7 +50,7 @@ class ExamInstancesController < ApplicationController
   def update
     respond_to do |format|
       if @exam_instance.update(exam_instance_params)
-        format.html { redirect_to @exam_instance, notice: 'Exam instance was successfully updated.' }
+        format.html { redirect_to @exam_instance, notice: t(:Exam_updated) }
         format.json { render :show, status: :ok, location: @exam_instance }
       else
         format.html { render :edit }
@@ -64,7 +64,7 @@ class ExamInstancesController < ApplicationController
   def destroy
     @exam_instance.destroy
     respond_to do |format|
-      format.html { redirect_to exam_instances_url, notice: 'Exam instance was successfully destroyed.' }
+      format.html { redirect_to exam_instances_url, notice: t(:Exam_destroyed) }
       format.json { head :no_content }
     end
   end

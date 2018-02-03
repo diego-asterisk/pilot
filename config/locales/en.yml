@@ -99,3 +99,17 @@ en:
   New_Result: "New Result"
   Result: "Result"
   Editing_Result: "Editing Result"
+
+  Exam_created: 'Exam instance was successfully created.'
+  Exam_updated: 'Exam instance was successfully updated.'
+  Exam_destroyed: 'Exam instance was successfully destroyed.'
+  Grade_created: 'Grade was successfully created.'
+  Grade_updated: 'Grade was successfully updated.'
+  Grade_destroyed: 'Grade was successfully destroyed.'
+  Result_created: 'Result was successfully created.'
+  Result_updated: 'Result was successfully updated.'
+  Result_destroyed: 'Result was successfully destroyed.'
+  Student_created: 'Student was successfully created.'
+  Student_updated: 'Student was successfully updated.'
+  Student_destroyed: 'Student was successfully destroyed.'
+  

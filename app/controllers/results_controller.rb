@@ -13,9 +13,6 @@ class ResultsController < ApplicationController
       @cursada = @grade.year
       @results = Result.all.select { |r| r.exam_instance.grade_id == @grade.id }
       @results = @results.reject { |r| r.student.grade_id =! @grade.id }
-      p '*****'
-      p @grade.id
-      p @results.count
     end
   end
 
@@ -42,7 +39,7 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       if @result.save
-        format.html { redirect_to @result, notice: 'Result was successfully created.' }
+        format.html { redirect_to @result, notice: t(:Result_created) }
         format.json { render :show, status: :created, location: @result }
       else
         format.html { render :new }
@@ -56,7 +53,7 @@ class ResultsController < ApplicationController
   def update
     respond_to do |format|
       if @result.update(result_params)
-        format.html { redirect_to @result, notice: 'Result was successfully updated.' }
+        format.html { redirect_to @result, notice: t(:Result_updated) }
         format.json { render :show, status: :ok, location: @result }
       else
         format.html { render :edit }
@@ -70,7 +67,7 @@ class ResultsController < ApplicationController
   def destroy
     @result.destroy
     respond_to do |format|
-      format.html { redirect_to results_url, notice: 'Result was successfully destroyed.' }
+      format.html { redirect_to results_url, notice: t(:Result_destroyed) }
       format.json { head :no_content }
     end
   end
