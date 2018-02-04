@@ -27,6 +27,8 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
+    @grades = Grade.where('id = ?',session[:grade_id])
+    @cursada = @grades.first.year
   end
 
   # POST /students

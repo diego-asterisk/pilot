@@ -20,14 +20,8 @@
     </div>
   </div>
 
-  <div class="field form-group row">
-    <%= form.label :grade_id, t(:Grade), class: 'col-sm-2 col-form-label'  %>
-    <div class="col-sm-4">
-    
-    <%= form.select :grade_id, options_for_select(Grade.all.map{ |s| [s.year, s.id] }, exam_instance.grade_id || session[:grade_id]), {:include_blank => exam_instance.grade.blank?}, { :class => 'form-control col-sm-6'} %>        
-    
-    </div>
-  </div>
+  
+  <%= form.hidden_field :grade_id, :value => exam_instance.grade_id || session[:grade_id] %>
 
 
   <div class="field form-group row">

@@ -22,11 +22,15 @@ class ExamInstancesController < ApplicationController
 
   # GET /exam_instances/new
   def new
+    @grades = Grade.where('id = ?',session[:grade_id])
+    @cursada = @grades.first.year
     @exam_instance = ExamInstance.new
   end
 
   # GET /exam_instances/1/edit
   def edit
+    @grades = Grade.where('id = ?',session[:grade_id])
+    @cursada = @grades.first.year
   end
 
   # POST /exam_instances
