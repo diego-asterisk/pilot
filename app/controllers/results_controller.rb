@@ -30,6 +30,7 @@ class ResultsController < ApplicationController
 
   # GET /results/1/edit
   def edit
+    @grade = Grade.find(session[:grade_id])
   end
 
   # POST /results

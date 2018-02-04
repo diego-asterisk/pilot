@@ -112,4 +112,4 @@ en:
   Student_created: 'Student was successfully created.'
   Student_updated: 'Student was successfully updated.'
   Student_destroyed: 'Student was successfully destroyed.'
-  
+  grade_caution: 'All students and exam instances of the grade will be deleted'

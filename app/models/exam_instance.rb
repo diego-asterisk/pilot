@@ -3,7 +3,7 @@ class ExamInstance < ApplicationRecord
   validates :grade_id, presence: true
 
   belongs_to :grade
-  has_many :results
+  has_many :results, dependent: :delete_all
   has_many :students, :through => :results
   
   

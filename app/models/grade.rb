@@ -1,8 +1,8 @@
 class Grade < ApplicationRecord
   validates :year, presence: true, numericality: { greater_than_or_equal_to: 2000 }, uniqueness: true
   
-  has_many :exam_instances
-  has_many :students
+  has_many :exam_instances, dependent: :destroy
+  has_many :students, dependent: :destroy
 
   def self.find_current(grade_id)
     if grade_id.nil?

@@ -113,6 +113,7 @@ es:
   Student_created: 'Nuevo estudiante creado.'
   Student_updated: 'Se actualizaron los datos del estudiante.'
   Student_destroyed: 'Estudiante borrado.'
+  grade_caution: 'Se borrarán todos los alumnos y evaluaciones de la cursada'
   
   
   
