@@ -21,7 +21,11 @@ class ExamInstance < ApplicationRecord
   
   def set_missing(student_id)
     res = Result.where('exam_instance_id = ? and student_id = ?',self.id, student_id).first
-    res.destroy if !res.nil?
+    if res.nil?
+      true
+    else
+      res.destroy
+    end
   end
   
   def set_score(student_id,score)
