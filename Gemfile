@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-
+gem 'pg','>= 0.20'
 group :production do
   gem 'pg' , '>= 0.20'
   gem 'rails_12factor', '>= 0.0.2'
