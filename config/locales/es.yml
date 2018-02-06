@@ -93,6 +93,7 @@ es:
   Approved: "Aprobados"
   Disapproved: "Desaprobados"
   Missing: "Ausentes"
+  missing_single: "ausente"
   Approval: "% Aprobación"
   Yesi: "Si"
   Noi: "No"

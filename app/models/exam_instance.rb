@@ -12,7 +12,7 @@ class ExamInstance < ApplicationRecord
   end
 
   def set_result(student_id,score)
-    if score.blank?
+    if score.blank? || score.to_s.downcase == I18n.t(:missing_single).downcase
       self.set_missing(student_id)
     else
       self.set_score(student_id,score)

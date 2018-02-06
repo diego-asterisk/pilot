@@ -92,6 +92,7 @@ en:
   Approved: "Approved"
   Disapproved: "Disapproved"
   Missing: "Missing"
+  missing_single: "missing"
   Approval: "% Approval"
   Yesi: "Yes"
   Noi: "No"
