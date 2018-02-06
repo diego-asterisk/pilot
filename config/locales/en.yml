@@ -86,6 +86,7 @@ en:
   Title: "Title"
   Min_score: "Min score"
   Exam_date: "Exam date"
+  Load_result: "Load Results"
   
   Instance: "Instance"
   Approved: "Approved"
@@ -113,3 +114,4 @@ en:
   Student_updated: 'Student was successfully updated.'
   Student_destroyed: 'Student was successfully destroyed.'
   grade_caution: 'All students and exam instances of the grade will be deleted'
+  Failed: 'Failed'

@@ -1,0 +1,51 @@
+<h1><%= @exam_instance.title %> <%= @cursada %></h1>
+
+<% if session[:grade_id].present? %>
+
+<table class="table table-responsive-md table-striped">
+  <thead>
+    <tr>
+      <th><%= t(:Docket_number) %></th>
+      <th><%= t(:Student) %></th>
+      <th><%= t(:Score) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.docket_number %></td>
+        <td><%= student.last_name + ' ' + student.first_name %></td>
+        <td>
+        <%= text_field_tag "score[#{student.id}]", student.score(@exam_instance.id), 
+         data: {
+            remote: true,
+            url: url_for(action: :score, id: @exam_instance.id),
+            method: "POST",
+            student_id: student.id,
+            id: @exam_instance.id
+         }, class: 'ajax-control'
+        %>
+        <span id="reportalert<%=student.id%>" style="color: darkgreen;font-size: 1.5em; display:none">Ok!</span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>
+
+<%= link_to t(:Back), exam_instances_path %>
+
+<script>
+  $(document).ready(function(){
+    $('.ajax-control').on('ajax:success', function(e, data, status, xhr){
+      var i;
+      i = $(this).data('studentId');
+      $('#reportalert' + i).show();
+      setTimeout(function(){ $('#reportalert' + i).hide(1000); }, 1000)
+    }).on('ajax:error',function(e, xhr, status, error){
+      alert('<%= t(:Failed) %>!');
+    });
+  });
+</script>

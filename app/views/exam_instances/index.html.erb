@@ -12,10 +12,9 @@
   <thead>
     <tr>
       <th><%= t(:Title) %></th>
-      <th><%= t(:Grade) %></th>
       <th><%= t(:Min_score) %></th>
       <th><%= t(:Exam_date) %></th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -23,9 +22,9 @@
     <% @exam_instances.each do |exam_instance| %>
       <tr>
         <td><%= exam_instance.title %></td>
-        <td><%= exam_instance.grade.year %></td>
         <td><%= exam_instance.min_score %></td>
         <td><%= exam_instance.exam_date.strftime('%d/%m/%Y %H:%M') %></td>
+        <td><%= link_to t(:Load_result), load_results_path(exam_instance) %></td>
         <td><%= link_to t(:Show), exam_instance %></td>
         <td><%= link_to t(:Edit), edit_exam_instance_path(exam_instance) %></td>
         <td><%= link_to t(:Destroy), exam_instance, method: :delete, data: { confirm: t(:are_sure) + '?' } %></td>

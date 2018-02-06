@@ -38,6 +38,7 @@ class ExamInstancesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get edit" do
+#    session[:grade_id] = 1
     get edit_exam_instance_url(@exam_instance)
     assert_response :success
   end

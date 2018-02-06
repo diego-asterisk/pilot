@@ -87,6 +87,7 @@ es:
   Title: "Título"
   Min_score: "Nota Mínima"
   Exam_date: "Fecha Evaluación"
+  Load_result: "Cargar Notas"
 
   Instance: "Instancia"
   Approved: "Aprobados"
@@ -114,7 +115,7 @@ es:
   Student_updated: 'Se actualizaron los datos del estudiante.'
   Student_destroyed: 'Estudiante borrado.'
   grade_caution: 'Se borrarán todos los alumnos y evaluaciones de la cursada'
-  
+  Failed: 'Error modificando la nota'  
   
   
   

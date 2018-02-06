@@ -1,5 +1,5 @@
 class ExamInstancesController < ApplicationController
-  before_action :set_exam_instance, only: [:show, :edit, :update, :destroy]
+  before_action :set_exam_instance, only: [:show, :edit, :load, :update, :destroy]
   before_action :set_menu
   before_action :authenticate_professor!
 
@@ -22,15 +22,48 @@ class ExamInstancesController < ApplicationController
 
   # GET /exam_instances/new
   def new
-    @grades = Grade.where('id = ?',session[:grade_id])
-    @cursada = @grades.first.year
+    @cursada = ''
+    if session[:grade_id].present?
+      @grades = Grade.where('id = ?',session[:grade_id])
+      @cursada = @grades.first.year
+    end
     @exam_instance = ExamInstance.new
   end
 
   # GET /exam_instances/1/edit
   def edit
-    @grades = Grade.where('id = ?',session[:grade_id])
-    @cursada = @grades.first.year
+    @cursada = ''
+    if session[:grade_id].present?
+      @grades = Grade.where('id = ?',session[:grade_id])
+      @cursada = @grades.first.year
+    end
+  end
+
+  # POST /exam_instances/1/score
+  def score  
+    exam_id = params['id']
+    student_id = params['score'].keys[0]
+    score = params['score'].values[0]
+    exam = ExamInstance.find(exam_id)
+    res = exam.set_result(student_id,score)
+    respond_to do |format|
+      if res
+        format.json { render json: {:result => 'success', :id => exam_id}, status: :ok, location: @exam_instance }
+      else
+        format.json { render json: {:result => 'error', :id => exam_id}, status: :unprocessable_entity }
+      end  
+    end
+  end
+  
+  # GET /exam_instances/1/load
+  def load
+    @cursada = ''
+    if session[:grade_id].present?
+      @grades = Grade.where('id = ?',session[:grade_id])
+      @cursada = @grades.first.year
+      @students = Student.where('grade_id = ?',session[:grade_id])
+      #.results.where('exam_instance_id = ?',29)
+    end
   end
 
   # POST /exam_instances

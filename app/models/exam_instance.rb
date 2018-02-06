@@ -10,7 +10,31 @@ class ExamInstance < ApplicationRecord
   def aprobado?(nota)
     nota >= self.min_score
   end
-    
+
+  def set_result(student_id,score)
+    if score.blank?
+      self.set_missing(student_id)
+    else
+      self.set_score(student_id,score)
+    end
+  end
+  
+  def set_missing(student_id)
+    res = Result.where('exam_instance_id = ? and student_id = ?',self.id, student_id).first
+    res.destroy if !res.nil?
+  end
+  
+  def set_score(student_id,score)
+    res = Result.where('exam_instance_id = ? and student_id = ?',self.id, student_id).first
+    if res.nil?
+      res = Result.new
+      res.student_id = student_id
+      res.exam_instance_id = self.id
+    end
+    res.score = score
+    res.save
+  end
+          
   def resume(alumnos)
     res = self.results
     linea = res.map do |r|
