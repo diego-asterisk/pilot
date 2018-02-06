@@ -10,15 +10,11 @@ end
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-gem 'pg','>= 0.20'
+gem 'pg', '~> 0.20'
 group :production do
-  gem 'pg' , '>= 0.20'
   gem 'rails_12factor', '>= 0.0.2'
 end
 
-group :development, :test do
-  gem 'sqlite3', '>= 1.3.8'
-end
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
